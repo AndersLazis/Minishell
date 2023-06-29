@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 13:27:48 by aputiev           #+#    #+#             */
-/*   Updated: 2023/06/29 17:45:33 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/06/29 21:41:30 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ t_data data;
 // }
 //////////////////////////////////////////
 
+/* environment initialization */
 int	init_env(char **envp)
 {
 	t_env	*env = NULL;
@@ -62,7 +63,8 @@ int	init_env(char **envp)
 		env->next = current;
 		current->value = envp[i];
 		current->next = NULL;
-		// printf("%s\n", current->value);	
+		printf("%s\n", current->value);
+		printf("%p\n", current->next);	
 		i++;		
 	}	
 	return(0);		
@@ -77,7 +79,7 @@ int	pwd(void)
 	return 0;
 }
 
-
+/* env command */
 int	ft_env(char **envp)
 {
 	int	i;
@@ -97,19 +99,18 @@ int	ft_env(char **envp)
 int ft_export(char **args)
 {
 	int	i;
+	t_env *current;
 	
-	
-	if(!args[1])
+	// if(!args[1])
+	// {
+	// 	ft_env(data.envp);
+	// 	return(0);
+	// }
+	current = data.env;
+	while(current->next != NULL)
 	{
-		ft_env(data.envp);
-		return(0);
-	}
-	
-	while(env_var != NULL)
-	{
-		printf("%s\n", env_var);
-		i++;
-		env_var = envp[i];
+		printf("declare -x %s\n", current->value);
+		current = current->next;
 	}
 	
 	i = 1;
