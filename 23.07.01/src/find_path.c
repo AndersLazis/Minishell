@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   find_path.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 22:01:11 by mschulme          #+#    #+#             */
-/*   Updated: 2023/06/30 23:17:05 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/07/01 14:52:16 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "minishell.h"
+#include "../includes/minishell.h"
 
 char	*find_path(char *cmd, char **envp)
 {

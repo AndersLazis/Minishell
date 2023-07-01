@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_env_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 23:31:51 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/01 00:05:19 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/07/01 14:52:20 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../includes/minishell.h"
 
 char	*ft_strdup_name(char *s1)
 {
