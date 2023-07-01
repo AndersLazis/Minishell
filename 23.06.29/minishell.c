@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 23:18:34 by mschulme          #+#    #+#             */
-/*   Updated: 2023/06/29 17:31:32 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/06/30 16:14:21 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void check_command(int num_args, char **args, char **env)
 	// }
 	else if (!strcmp(args[0], "export")) //<-----ADDED
 		{
-			ft_export(args);
+			ft_export(env);
 		}
 	else if (!strcmp(args[0], "env"))//<-----ADDED
 	{

@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 23:18:34 by mschulme          #+#    #+#             */
-/*   Updated: 2023/06/28 12:20:57 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/06/29 12:29:15 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 gcc -Wall -Werror -Wextra  -lreadline *.c -o minishell
 */
 
-void	shell_loop(void)
+void	shell_loop(int ac, char **av, char **envp)
 {
 	char	*command;
 	char	seps[] = " \t";
@@ -30,9 +30,11 @@ void	shell_loop(void)
 	while (1)
 	{
 		num_args = 0;
-		command = readline(">> ");
-		if (strlen(command) > 0)
-			add_history(command);
+		// command = readline(">> ");
+		
+		// rl_replace_line();
+		// if (strlen(command) > 0)
+		// 	add_history(command);
 
 		part = strtok(command, seps);	// Decompose in command and arguments
 		while (part != NULL)
@@ -53,14 +55,19 @@ void	shell_loop(void)
 		}
 		if (!strcmp(args[0], "pwd"))
 		{
-			printf("%s\n", getcwd(pathdirectory, 42));
+			printf("%s\n", getcwd(pathdirectory, 2));
+			printf("fdf");
+			pwd();
 		}
 		if (!strcmp(args[0], "echo"))
 		{
 			if (num_args > 0)
 				printf("%s\n", args[1]);
 		}
-
+		if (!strcmp(args[0], "env"))
+		{
+			env(envp);
+		}
 		args[num_args] = NULL;
 		pid = fork();
 		if (pid == 0)
@@ -77,9 +84,9 @@ void	shell_loop(void)
 	}
 }
 
-int	main(void)
+int	main(int ac, char **av, char **envp)
 {
-	shell_loop();
+	shell_loop(ac, av, envp);
 
 	return (EXIT_SUCCESS);
 }

@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   expander.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/28 00:00:58 by mschulme          #+#    #+#             */
-/*   Updated: 2023/06/28 00:01:00 by mschulme         ###   ########.fr       */
+/*   Created: 2023/06/30 22:55:53 by mschulme          #+#    #+#             */
+/*   Updated: 2023/07/01 00:35:20 by mschulme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "minishell.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/wait.h> 
-#include <readline/readline.h>
-#include <readline/history.h>
-
-#endif
+char	**expander(char **str, t_data *data)
+{
+	
+	return (str);
+}
