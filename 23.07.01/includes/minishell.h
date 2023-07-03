@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 00:00:58 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/01 00:35:13 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/07/03 18:52:04 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ int		pwd(void);
 
 int		ft_env(t_data *data);
 
-int		ft_export(t_data *data);
+// int		ft_export(t_data *data);
+int	ft_export(char *args,t_data *data);
 
 int		init_env_unsorted(t_data *data, char **env);
 
@@ -72,5 +73,9 @@ char	**lexer(char *str, char **lexer_output, t_data *data);
 void	check_command(int num_args, char **args, t_data *data);
 
 char	**expander(char **str, t_data *data);
+
+char	*ft_strdup_name(char *s1); //<-added
+
+char	*ft_strdup_value(char *s1); //<-added
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 23:18:34 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/01 15:56:47 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/03 10:58:39 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void check_command(int num_args, char **args, t_data *data)
 	}
 	else if (!strcmp(args[0], "export"))
 	{
-		ft_export(data);
+		ft_export(args[1], data); /////////////////////////////// arguments added
 	}
 	else if (!strcmp(args[0], "env"))
 	{
@@ -139,7 +139,7 @@ void	shell_loop(t_data *data)
 
 		if (command_line == NULL)
 			exit (0);
-		token = strtok(command_line, " \t");
+		token = strtok(command_line, " \t"); //Is STRTOK allowed?
 		num_args = 0;
 		while (token != NULL)
 		{

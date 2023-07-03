@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 22:12:26 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/01 14:52:27 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/03 10:58:03 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,6 @@ char	**lexer(char *str, char **lexer_output, t_data *data)
 		i++;
 	}
 	lexer_output[j + 1] = NULL;
-	lexer_output = expander(lexer_output, data);
+	lexer_output = expander(lexer_output, data); //what it's supposed to do?
 	return (lexer_output);
 }

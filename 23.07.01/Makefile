@@ -16,6 +16,7 @@ SRCS		=	minishell.c lexer.c init_env_unsorted.c \
 OBJS =	$(SRCS:%.c=$(BUILD_DIR)/%.o)
 
 all: $(NAME)
+	./minishell
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) $(LIBFT) -o $(NAME)
@@ -33,4 +34,3 @@ fclean: clean
 	$(RM) $(NAME)
 	
 .PHONY:	all clean fclean re
-
