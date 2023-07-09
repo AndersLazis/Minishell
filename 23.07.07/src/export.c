@@ -118,7 +118,7 @@ int	rewrite_exist_env_var_in_unsorted(char *args,t_data *data)
 /*========================================ADD NEW VARIABLE==============================================*/
 /* adds new environment variable into the unsorted list*/
 int add_new_env_var_in_unsorted(char *args, t_data *data)
-{	
+{	printf("add_new_env_var_in_unsorted\n");
 	t_env_unsorted	*current;
 	t_env_unsorted	*new;
 	
@@ -138,19 +138,20 @@ int add_new_env_var_in_unsorted(char *args, t_data *data)
 
 /* adds new environment variable into the sorted list*/
 int add_new_env_var_in_sorted(char *args,t_data *data)
-{	
+{	printf("add_new_env_var_in_sorted\n");
 	t_env_sorted	*current;
 	t_env_sorted	*new;
 
 	char	*name = ft_strdup_name(args);
 	char	*value = ft_strdup_value(args);
-	
+	printf("char*name|%s|\n", name);
+	printf("char*value|%s|\n", value);
 	current = data->env_sorted;
 	
 	while(current)
 	{	//printf("current->next->name|%s|\n", current->next->name);
 		if((strcmp(name, current->name) > 0)  && current->next == NULL)
-		{
+		{	printf("case 1\n");
 			new = malloc(sizeof(t_env_sorted));
 			new->next = NULL;
 			current->next = new;		
@@ -159,7 +160,7 @@ int add_new_env_var_in_sorted(char *args,t_data *data)
 			return(1);
 		}
 		else if((strcmp(name, current->name) > 0)  &&(strcmp(name, current->next->name) < 0))
-		{
+		{	printf("case 2\n");
 			new = malloc(sizeof(t_env_sorted));
 			new->next = current->next;
 			current->next = new;		
@@ -168,7 +169,7 @@ int add_new_env_var_in_sorted(char *args,t_data *data)
 			return(1);
 		}
 		else if(strcmp(name, current->next->name) < 0)
-		{
+		{	printf("case 3\n");
 			new = malloc(sizeof(t_env_sorted));
 			new->next = current;		
 			new->name = name;
@@ -177,7 +178,7 @@ int add_new_env_var_in_sorted(char *args,t_data *data)
 			return(1);
 		}
 
-
+		printf("case 4\n");
 		current=current->next;		
 	}
 	return(0);
@@ -222,7 +223,6 @@ int	ft_export(char *args,t_data *data)
 		printf("is_env_var_exist:%d\n", is_env_var_exist(args, data));
 		if(is_env_var_exist(args, data) == 0)
 		{
-			printf("TEST\n");
 			printf("add_new_env_var_in_sorted=%d\n", add_new_env_var_in_sorted(args, data));
 			printf("add_new_env_var_in_unsorted=%d\n", add_new_env_var_in_unsorted(args, data));
 		}

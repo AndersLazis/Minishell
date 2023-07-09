@@ -6,17 +6,17 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 23:31:51 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/05 16:17:52 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/07 20:11:40 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
 char	*ft_strdup_name(char *s1)
-{
+{	printf("ft_strdup_name:args|%s|\n", s1);
+
 	int		i;
 	char	*dst;
-	//printf("s1:%s\n", s1);
 	i = 0;
 	if (!(s1))
 		return (NULL);
@@ -35,7 +35,7 @@ char	*ft_strdup_name(char *s1)
 }
 
 char	*ft_strdup_value(char *s1)
-{
+{	printf("ft_strdup_value:args|%s|\n", s1);
 	int		i;
 	int		j;
 	char	*dst;
@@ -51,6 +51,7 @@ char	*ft_strdup_value(char *s1)
 	j = j + 1;
 	if (!(dst = malloc(sizeof(char) * ((i-j) + 1))))
 		return (NULL);
+	printf("LOL\n");
 	i = 0;
 	while (s1[j] != '\0')
 	{

@@ -37,7 +37,7 @@ int print_sorted_list(t_data *data)
 /*========================================REWRITE==============================================*/
 int	rewrite_exist_env_var_in_sorted(char *args,t_data *data)
 {
-	printf("REWRITE\n");
+	printf("rewrite_exist_env_var_in_sorted\n");
 	int	i;
 	int	j;
 	t_env_sorted *current;
@@ -67,7 +67,7 @@ int	rewrite_exist_env_var_in_sorted(char *args,t_data *data)
 }
 
 int	rewrite_exist_env_var_in_unsorted(char *args,t_data *data)
-{
+{		printf("rewrite_exist_env_var_in_unsorted\n");
 	int	i;
 	int	j;
 	t_env_unsorted *current;

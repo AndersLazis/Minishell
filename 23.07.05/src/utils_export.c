@@ -46,7 +46,7 @@ int is_env_var_exist(char *args, t_data *data)
 	t_env_unsorted *current;
 
 	current = data->env_unsorted;	
-	while(current->next != NULL)
+	while(current)
 	{	
 		i = 0;
 		j = 0;
@@ -61,7 +61,7 @@ int is_env_var_exist(char *args, t_data *data)
 			i++;
 			j++;
 		}
-		if(args[i] == '\0' || args[i] == '=')
+		if((args[i] == '\0' || args[i] == '=') && (current->name[j] == '=' || current->name[j] == '\0'))
 			return(1);
 		current=current->next;
 	}

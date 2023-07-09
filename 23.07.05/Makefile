@@ -9,7 +9,8 @@ BUILD_DIR	= build
 SRC_DIR		= ./src
 SRCS		=	minishell.c lexer.c init_env_unsorted.c \
 				init_env_sorted.c find_path.c expander.c \
-				builtins.c env.c export.c utils_export.c
+				builtins.c env.c export.c utils_export.c \
+				exit.c
 
 
 				

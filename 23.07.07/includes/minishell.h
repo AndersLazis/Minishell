@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 00:00:58 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/06 22:51:46 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/07 16:41:25 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_data
 	int				ac;
 	char			**av;
 	char			**envp;
+	
 }	t_data;
 
 /* builtins.c */
