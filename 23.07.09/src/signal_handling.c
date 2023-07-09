@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signal_handling.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 15:42:54 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/07 15:47:41 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/07/09 16:36:15 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	signal_handler(int signal)
 	{
 		rl_replace_line("", 1);
 		rl_on_new_line();
-		rl_redisplay();
+		 
 	}
 	if (signal == SIGQUIT)
 	{
