@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:36:39 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/12 22:02:07 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/12 22:41:44 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,40 @@ static void	print_sorted_list(t_env_list *current) //<--------------------------
 
 
 
-// int	add_var_in_envp(t_data *data, char *name, char *val)
-// {
-// 	int	i;
-// 	char	**temp;
+int	add_var_in_envp(t_data *data, char *name, char *val)
+{
+	int		i;
+	int		j;
+	int		len;
+	char	**temp;
 	
-// 	while(data->envp[i] != NULL)
-// 		i++;
-// 	temp
-
+	i = 0;
+	
+	while(data->envp[i] != NULL)
+		i++;
+	temp = malloc(sizeof(char*) * (i + 2));
+	if(!temp)
+		return(1);
+	i = 0;
+	j = 0;
+	while(data->envp[i] != NULL)
+	{	
+		len = 0;
+		while(data->envp[i][j]!= '\0')
+			len++;
+		while(data->envp[i][j] != '\0')
+		{	
+			temp[i] = malloc(sizeof(char)*)
+			temp[i][j] = envp[i][j];
+			j++;
+		}
+		i++;
+	}
+	
+	//free envp
 
 	
-// }
+}
 
 
 
@@ -55,10 +77,10 @@ int	update_envp(t_data *data, char *name, char *val)
 
 	i = 0;
 	j = 0;
-
+	
 	while(data->envp[i] != NULL)
 	{	//printf("data->envp[i]%s\n", data->envp[i]);
-		while(data->envp[i][j] != '\0' && data->envp[i][j] != '=')
+		while(data->envp[i][j] != '\0' && data->envp[i][j] != '=' && name[j] != '\0')
 		{
 			if(data->envp[i][j] != name[j])
 				break ;
