@@ -6,17 +6,17 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 16:57:46 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/12 16:08:45 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/12 20:26:30 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-char	*ft_strdup_name(char *s1)
+char	*ft_strdup_name(char *s1) // <-------------------------------------------------------------------changed_july_12
 {
 	char	*dst;
 	int		i;
-printf("s1_nam:%s\n", s1);
+
 	i = 0;
 	if (!(s1))
 		return (NULL);
@@ -31,24 +31,25 @@ printf("s1_nam:%s\n", s1);
 		i++;
 	}
 	dst[i] = '\0';
-printf("dst_name:%s\n", dst);
 	return (dst);
 }
 
-char	*ft_strdup_value(char *s1)
+char	*ft_strdup_value(char *s1) // <-------------------------------------------------------------------changed_july_12
 {
 	char	*dst;
 	int		i;
 	int		j;
-printf("s1_val:%s\n", s1);
+
 	i = 0;
 	j = 0;
 	if (!(s1))
 		return (NULL);
 	while (s1[i] != '\0')
 		i++;
-	while (s1[j] != '=' || s1[i] != '\0')
+	while (s1[j] != '=' && s1[j] != '\0')
 		j++;
+	if(s1[j] == '\0')
+		return(NULL);
 	j = j + 1;
 	if (!(dst = malloc(sizeof(char) * ((i - j) + 1))))
 		return (NULL);
@@ -60,9 +61,9 @@ printf("s1_val:%s\n", s1);
 		i++;
 	}
 	dst[i] = '\0';
-printf("dst_val:%s\n", dst);
 	return (dst);
 }
+
 //	export abc abc=11 abc=22
 int	ft_strcmp(char *s1, char *s2)
 {
