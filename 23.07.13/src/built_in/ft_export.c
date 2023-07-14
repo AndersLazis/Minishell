@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:36:39 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/13 13:04:17 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/13 17:23:16 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,79 +27,91 @@ static void	print_sorted_list(t_env_list *current) //<--------------------------
 	}
 }
 
-
-
-int	add_var_in_envp(t_data *data, char *name, char *val)
+int fill_new_envp_arr(t_data *data, int i)	//<------------------------------------------------------added_july_13
 {
-	int		i;
-	int		j;
-	int		len;
-	char	**temp;
+	int	j;
+	int	k;
+	int m;
+	t_env_list	*current;
 	
-	i = 0;
-	
-	while(data->envp[i] != NULL)
-		i++;
-	temp = malloc(sizeof(char*) * (i + 2));
-	if(!temp)
-		return(1);
-	i = 0;
 	j = 0;
-	while(data->envp[i] != NULL)
+	current = data->env_unsorted;
+	while(data->envp[j] != NULL && (current))
 	{	
-		len = 0;
-		while(data->envp[i][j]!= '\0')
-			len++;
-		while(data->envp[i][j] != '\0')
-		{	
-			temp[i] = malloc(sizeof(char)*)
-			temp[i][j] = envp[i][j];
-			j++;
+		
+		data->envp[j] = malloc((sizeof(char)) * (ft_strlen(current->name) + ft_strlen(current->value) + 2));
+		if(!data->envp[j])
+			return (EXIT_FAILURE);
+		k = 0;
+		while(current->name[k] != '\0' && data->envp[j][k] != '\0')
+		{
+			data->envp[j][k] = current->name[k];
+			k++;
 		}
-		i++;
+		data->envp[j][k] = '=';
+		k++;
+		m = 0;
+		while(current->value[m] != '\0' && data->envp[j][k] != '\0')
+		{
+			data->envp[j][k] = current->value[m];
+			k++;
+			m++;
+		}
+		data->envp[j][k] = '\0';
+		j++;
+		current = current->next;	
 	}
-	
-	//free envp
-
-	
+	data->envp[j] = NULL;
+	return (0);
 }
 
-
-
-
-
-
-int	update_envp(t_data *data, char *name, char *val)
-{	
-
-	int		i;
-	int		j;
+int	update_envp(t_data *data)	//<------------------------------------------------------added_july_13
+{
+	int			i;
+	int			j;
+	t_env_list	*current;
+	char		**new_envp;
 
 	i = 0;
-	j = 0;
-	
-	while(data->envp[i] != NULL)
-	{	//printf("data->envp[i]%s\n", data->envp[i]);
-		while(data->envp[i][j] != '\0' && data->envp[i][j] != '=' && name[j] != '\0')
-		{
-			if(data->envp[i][j] != name[j])
-				break ;
-			j++;		
-		}
-		if(data->envp[i][j] == '=')		
-		{	//printf("data->envp[i][j-1]%c\n", data->envp[i][j-1]);
-			// 	printf("data->envp[i][j]%c\n", data->envp[i][j]);
-			printf("//rewrite_var_in_envp(data, name, val);\n");
-			return (0);
-		}
+	j = 0;	
+	current = data->env_unsorted;
+	while(current)
+	{
+		current = current->next;
 		i++;
 	}
-	printf("//add_var_in_envp(data, name, val);");
+	new_envp = malloc(sizeof(char*) * (i));
+	if (!new_envp)
+		return (EXIT_FAILURE);
+	printf("i:%d\n", i);
+	// data->envp[i] = NULL;
+	data->envp = new_envp;
+	fill_new_envp_arr(data, i);
+	
+	///////////////////////////////
+	// printf("\n\nnew env:\n");
+	// int l = 0;
+	// int n = 0;
+	// while(data->envp[l] != NULL)
+	// {	
+	// 	// n = 0;
+	// 	// while(data->envp[l][n]!='\0')
+	// 	// {
+	// 	// 	printf("%c", data->envp[l][n]);
+	// 	// 	n++;
+	// 	// }
+	// 	// printf("\n");
+	// 	printf("l:%d,%s\n",l, data->envp[l]);	
+	// 	l++;
+	// }
+	///////////////////////////////env
 	return(0);
 }
 
 
-void	ft_export(t_data *data) //<------------------------------------------------------changed_july_12
+
+
+void	ft_export(t_data *data) //<------------------------------------------------------changed_july_13
 {
 	t_env_list	*current;
 	char		*name;
@@ -136,5 +148,5 @@ void	ft_export(t_data *data) //<------------------------------------------------
 			i++;
 		}		
 	}
-	update_envp(data, name, val);
+	update_envp(data);
 }

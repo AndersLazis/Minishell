@@ -1,0 +1,7 @@
+  PID TTY           TIME CMD
+61766 ttys002    0:00.02 /bin/zsh -il
+62477 ttys002    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+62822 ttys002    0:00.16 ./minishell
+62844 ttys002    0:00.00 (minishell)
+59124 ttys006    0:00.03 /bin/zsh -il
+40232 ttys007    0:00.03 /bin/zsh -il
