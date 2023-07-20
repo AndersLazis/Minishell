@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 00:00:58 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/16 15:53:56 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/16 19:52:59 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,7 @@ void	redirect_and_execute(t_data *data);
 
 bool	redirect_in(t_data *data);
 int		ft_heredoc(t_data *data);
+char	**ft_split_arguments_with_heredoc(char *str, t_data *data);
 
 /* redirect_out.c */
 

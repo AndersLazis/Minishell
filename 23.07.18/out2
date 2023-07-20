@@ -1,0 +1,16 @@
+>>
+A.txt
+B.txt
+C.txt
+Makefile
+build
+includes
+libft.a
+minishell
+philo
+src
+test
+test.c
+test.txt
+test1
+utils

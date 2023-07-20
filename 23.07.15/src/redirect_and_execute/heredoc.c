@@ -57,13 +57,19 @@ int ft_heredoc(t_data *data)
 			printf("No file");
 			exit (0);
 		}
-		redirect_in_from_heredoc(filename, data);
+		//redirect_in_from_heredoc(filename, data);
 	}
 	return (true);
 
 
 
+	// int	redirect(heredoc_args(data))
+	// {
+	// 	while 
 
+
+
+	// }
 
 
 

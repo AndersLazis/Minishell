@@ -6,11 +6,13 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:28:35 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/17 20:28:56 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/18 11:55:55 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
+
+
 
 void	ft_cd(t_data *data)
 {
@@ -22,7 +24,7 @@ void	ft_cd(t_data *data)
 		printf("too few arguments\n");
 	}
 	else if (data->split[2] == NULL)
-	{	//old_pwd_update();
+	{	old_pwd_update();
 		chdir(data->split[1]);
 	}
 	else
@@ -30,8 +32,4 @@ void	ft_cd(t_data *data)
 		printf("too many arguments\n");
 	}
 }
-
-old_pwd_update()
-{
-	
-}
+ 

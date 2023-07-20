@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 23:18:34 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/18 21:09:03 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/19 19:06:38 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ int	main(int ac, char **av, char **env)
 	data->envp = env;
 	init_env_unsorted(data, env);
 	init_env_sorted(data, env);
-	increment_shell_level(data);
-	update_envp(data);
+	//increment_shell_level(data);
+	//update_envp(data);
 	minishell_loop(data);
 	return (EXIT_SUCCESS);
 }

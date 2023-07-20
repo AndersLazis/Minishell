@@ -1,0 +1,100 @@
+  PID TTY           TIME CMD
+22397 ttys002    0:00.04 /bin/zsh -il
+22398 ttys004    0:00.02 /bin/zsh -il
+22443 ttys005    0:00.05 /bin/zsh -il
+25831 ttys005    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+22324 ttys009    0:00.02 /bin/bash --init-file /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+51654 ttys010    0:00.03 /bin/zsh -il
+67970 ttys010    0:00.01 ./minishell
+52017 ttys011    0:00.13 /bin/zsh -il
+74514 ttys011    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+74825 ttys011    0:00.08 ./minishell
+66386 ttys014    0:00.04 /bin/zsh -il
+66411 ttys014    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+66732 ttys014    0:00.09 ./minishell
+67630 ttys017    0:00.03 /bin/zsh -il
+67644 ttys019    0:00.04 /bin/bash --init-file /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+TestTestTestExit status was 0
+  PID TTY           TIME CMD
+22397 ttys002    0:00.04 /bin/zsh -il
+22398 ttys004    0:00.02 /bin/zsh -il
+22443 ttys005    0:00.05 /bin/zsh -il
+25831 ttys005    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+22324 ttys009    0:00.02 /bin/bash --init-file /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+51654 ttys010    0:00.03 /bin/zsh -il
+67970 ttys010    0:00.01 ./minishell
+52017 ttys011    0:00.13 /bin/zsh -il
+74514 ttys011    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+74825 ttys011    0:00.19 ./minishell
+66386 ttys014    0:00.04 /bin/zsh -il
+66411 ttys014    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+66732 ttys014    0:00.09 ./minishell
+67630 ttys017    0:00.03 /bin/zsh -il
+67644 ttys019    0:00.04 /bin/bash --init-file /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+TestTestTestExit status was 0
+TestTestTestTestTestTest>>
+A.txt
+B.txt
+Makefile
+build
+includes
+libft.a
+minishell
+philo
+src
+test
+test.c
+test.txt
+test1
+utils
+Exit status was 0
+>>
+A.txt
+B.txt
+Makefile
+build
+includes
+libft.a
+minishell
+philo
+src
+test
+test.c
+test.txt
+test1
+utils
+Exit status was 0
+  PID TTY           TIME CMD
+22397 ttys002    0:00.04 /bin/zsh -il
+22398 ttys004    0:00.02 /bin/zsh -il
+22443 ttys005    0:00.05 /bin/zsh -il
+25831 ttys005    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+22324 ttys009    0:00.02 /bin/bash --init-file /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+51654 ttys010    0:00.03 /bin/zsh -il
+67970 ttys010    0:00.01 ./minishell
+77134 ttys011    0:00.02 /bin/zsh -il
+77147 ttys011    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+77458 ttys011    0:00.18 ./minishell
+66386 ttys014    0:00.04 /bin/zsh -il
+66411 ttys014    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+66732 ttys014    0:00.09 ./minishell
+67630 ttys017    0:00.03 /bin/zsh -il
+67644 ttys019    0:00.04 /bin/bash --init-file /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+Exit status was 0
+  PID TTY           TIME CMD
+22397 ttys002    0:00.04 /bin/zsh -il
+22398 ttys004    0:00.02 /bin/zsh -il
+22443 ttys005    0:00.05 /bin/zsh -il
+25831 ttys005    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+22324 ttys009    0:00.02 /bin/bash --init-file /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+51654 ttys010    0:00.03 /bin/zsh -il
+67970 ttys010    0:00.01 ./minishell
+77134 ttys011    0:00.02 /bin/zsh -il
+77147 ttys011    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+77458 ttys011    0:00.24 ./minishell
+66386 ttys014    0:00.04 /bin/zsh -il
+66411 ttys014    0:00.03 /Applications/Xcode.app/Contents/Developer/usr/bin/make re
+66732 ttys014    0:00.09 ./minishell
+67630 ttys017    0:00.03 /bin/zsh -il
+67644 ttys019    0:00.04 /bin/bash --init-file /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+Exit status was 0
