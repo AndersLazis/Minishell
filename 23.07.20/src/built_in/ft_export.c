@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:36:39 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/20 21:56:52 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/21 16:50:01 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,20 @@ static void	print_sorted_list(t_env_list *current)
 		temp = temp->next;
 	}
 }
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	count;
+
+	count = 0;
+	if(!s)
+		return(0);
+	while (*s++)
+		count++;
+	return (count);
+}
+
+
 
 int fill_new_envp_arr(t_data *data, int i)
 {
@@ -50,16 +64,20 @@ int fill_new_envp_arr(t_data *data, int i)
 		}
 		data->envp[j][k] = '=';
 		k++;
-		m = 0;
-		while(current->value[m] != '\0' && data->envp[j][k] != '\0')
-		{
-			data->envp[j][k] = current->value[m];
-			k++;
-			m++;
+		m = 0;		
+
+		if (current->value)
+		{	
+			while(current->value[m] != '\0' && data->envp[j][k] != '\0')
+			{
+				data->envp[j][k] = current->value[m];
+				k++;
+				m++;
+			}
 		}
 		data->envp[j][k] = '\0';
 		j++;
-		current = current->next;	
+		current = current->next;
 	}
 	data->envp[j] = NULL;
 	return (0);
@@ -80,11 +98,11 @@ int	update_envp(t_data *data)
 		current = current->next;
 		i++;
 	}
-	new_envp = malloc(sizeof(char*) * (i));
+	new_envp = malloc(sizeof(char*) * (i+1));
 	if (!new_envp)
 		return (EXIT_FAILURE);
-	//printf("i:%d\n", i);
-	// data->envp[i] = NULL;
+	printf("i:%d\n", i);
+	new_envp[i] = NULL;
 	data->envp = new_envp;
 	//++add free old envp function!!!!
 	fill_new_envp_arr(data, i);
@@ -122,7 +140,7 @@ void	ft_export(t_data *data)
 	else
 	{
 		while (data->split[i] != NULL)
-		{
+		{	printf("data->split[%d]|%s|\n", i, data->split[i]);
 			if(!is_env_var_name_valid(data))
 			{	
 				printf("export: `%s': not a valid identifier\n", data->split[i]);
@@ -130,14 +148,14 @@ void	ft_export(t_data *data)
 			}
 			name = ft_strdup_name(data->split[i]);
 			val = ft_strdup_value(data->split[i]);
-			if (searchlist(data->env_sorted, name) != NULL)
+			if (searchlist(data->env_sorted, name) != NULL)	//if found
 			{
 				current = searchlist(data->env_sorted, name);
 				current->value = ft_strdup_value(data->split[i]);
 				current = searchlist(data->env_unsorted, name);
 				current->value = ft_strdup_value(data->split[i]);
 			}
-			else
+			else												//if wasn't found
 			{
 				insert_at_end(data->env_sorted, name, val);
 				data->env_sorted = sort_list(data->env_sorted);

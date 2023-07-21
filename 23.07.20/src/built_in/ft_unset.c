@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:36:39 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/13 18:05:00 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/07/21 14:33:00 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ft_unset(t_data *data)
 					deletenode(data->env_sorted, name);
 					deletenode(data->env_unsorted, name);
 				}
+				//free (name);
 			}
 			i++;
 		}

@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 00:00:58 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/19 15:57:42 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/21 15:58:29 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,9 @@ typedef struct s_data
 
 t_env_list	*sort_list(t_env_list *lst);
 void		insert_at_end(t_env_list *head, char *name, char *value);
+void		create_old_pwd(t_env_list *head, char* old_pwd);
+void		create_shlvl(t_env_list *head);
+
 
 /* util_functions.c */
 

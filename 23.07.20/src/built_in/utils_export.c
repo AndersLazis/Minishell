@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_export.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 22:24:39 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/13 18:05:22 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:27:28 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	is_env_var_name_valid(t_data *data)
 	
 	i = 0;
 	j = 1;
-	if(!data->split[1][i])		// <-------------------------------------------------------------------added_july_12
+	if(!data->split[1][i])
 		return (0);
 	while (data->split[j] != NULL)
 	{
@@ -37,7 +37,7 @@ int	is_env_var_name_valid(t_data *data)
 	return (1);
 }
 
-int	is_env_var_val_valid(t_data *data)	// <-------------------------------------------------------------------added_july_12
+int	is_env_var_val_valid(t_data *data)
 {
 	int	i;
 	int	j;

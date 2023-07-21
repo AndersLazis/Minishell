@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 23:31:51 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/20 22:24:07 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/21 15:59:31 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,9 @@ void	init_env_sorted(t_data *data, char **env)
 		i++;
 	}
 	if (searchlist(head, "SHLVL") == NULL)
-		insert_at_end(head, "SHLVL", "1");
+		create_shlvl(head);
 	if (searchlist(head, "OLDPWD") == NULL)
-	{
-		insert_at_end(head, "OLDPWD", "");
-	}
+		create_old_pwd(head, NULL);
 	else
 	{
 		ptr = searchlist(head, "OLDPWD");
@@ -65,17 +63,17 @@ void	init_env_unsorted(t_data *data, char **env)
 		i++;
 	}
 	if (searchlist(head, "SHLVL") == NULL)
-		insert_at_end(head, "SHLVL", "1");
+		create_shlvl(head);
 	if (searchlist(head, "OLDPWD") == NULL)
-		insert_at_end(head, "OLDPWD", "");
-	// else
-	// {
-	// 	ptr = searchlist(head, "OLDPWD");
-	// 	if(ptr->value)
-	// 	{
-	// 		free(ptr->value);
-	// 		ptr->value = NULL;
-	// 	}
-	// }
+		create_old_pwd(head, NULL);
+	else
+	{
+		ptr = searchlist(head, "OLDPWD");
+		if(ptr->value)
+		{
+			free(ptr->value);
+			ptr->value = NULL;
+		}
+	}
 	data->env_unsorted = head;
 }

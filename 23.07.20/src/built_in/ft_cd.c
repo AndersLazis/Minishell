@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:28:35 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/20 22:23:11 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/21 15:48:20 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,11 @@ int	print_oldpwd(t_data *data)
 	if(searchlist(data->env_sorted, "OLDPWD") != NULL)
 	{
 		current = searchlist(data->env_sorted, "OLDPWD");
-		printf("%s\n", current->value);
+		
+		if (current->value)
+			printf("%s\n", current->value);
+		else
+			printf("OLDPWD not set\n");
 		return(EXIT_SUCCESS);
 	}
 	else
@@ -73,23 +77,23 @@ int	oldpwd_update(char* old_pwd_sorted, char* old_pwd_unsorted, t_data *data)
 		PWD_list_unsorted = searchlist(data->env_unsorted, "OLDPWD");
 		printf("%p\n",PWD_list_sorted->value);
 		printf("%p\n",PWD_list_unsorted->value);
-		if(PWD_list_sorted->value != NULL)
+		if(PWD_list_sorted->value)
 		{	
 			free(PWD_list_sorted->value);
 			PWD_list_sorted->value = NULL;
 		}
-		// if(PWD_list_unsorted->value)
-		// {
-		// 	free(PWD_list_unsorted->value);
-		// 	PWD_list_unsorted->value = NULL;
-		// }
+		if(PWD_list_unsorted->value)
+		{
+			free(PWD_list_unsorted->value);
+			PWD_list_unsorted->value = NULL;
+		}
 		PWD_list_sorted->value = ft_strdup(old_pwd_sorted);
 		PWD_list_unsorted->value = ft_strdup(old_pwd_unsorted);
 		return(EXIT_SUCCESS);
 	}
 	else
-		insert_at_end(data->env_sorted, "OLDPWD", old_pwd_sorted);
-		insert_at_end(data->env_unsorted, "OLDPWD", old_pwd_unsorted);
+		create_old_pwd(data->env_sorted, old_pwd_sorted);
+		create_old_pwd(data->env_unsorted, old_pwd_unsorted);
 		sort_list(data->env_sorted);
 		update_envp(data);
 		return(EXIT_FAILURE);	
@@ -116,8 +120,9 @@ int	ft_cd(t_data *data)		//<-changed_23.07.19
 		// printf("old_pwd:%s\n", old_pwd_sorted, old_pwd_unsorted);
 		exit_status = chdir(data->split[1]);	// 0 if ok, 1 if nok
 		if(exit_status != 0)
-			printf("cd error\n");
-		oldpwd_update(old_pwd_sorted, old_pwd_unsorted, data);	
+			printf("No such file or directory\n");
+		else
+			oldpwd_update(old_pwd_sorted, old_pwd_unsorted, data);	
 		//pwd_update(data);
 	}
 	// free(old_pwd);

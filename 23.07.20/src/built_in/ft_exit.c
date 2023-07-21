@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:28:35 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/18 19:24:47 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/21 15:54:56 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,13 @@ int	free_unsorted_list(t_data *data) //<-Added free unsorted list
 	while(current)
 	{
 		ptr = current->next;
-		free(current->name);
-		free(current->value);
-		free(current);
+		//printf("current->name:%s\n", current->name);
+		if(current->name)
+			free(current->name);
+		if(current->value)
+			free(current->value);
+		if(current)
+			free(current);
 		current = ptr;
 	}
 	return(1);
@@ -38,9 +42,12 @@ int	free_sorted_list(t_data *data) //<-Added free sorted list
 	while(current)
 	{
 		ptr = current->next;
-		free(current->name);
-		free(current->value);
-		free(current);
+		if(current->name)
+			free(current->name);
+		if(current->value)
+			free(current->value);
+		if(current)
+			free(current);
 		current = ptr;
 	}
 	return(1);

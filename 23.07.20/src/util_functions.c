@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   util_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 16:57:46 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/13 18:13:44 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:33:35 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ char	*ft_strdup_name(char *s1)
 	int		i;
 
 	i = 0;
+	printf("input ft_strdup_name(char *s1):|%s|\n", s1);
 	if (!(s1))
 		return (NULL);
 	while (s1[i] != '\0' && s1[i] != '=')
@@ -57,11 +58,12 @@ char	*ft_strdup_value(char *s1)
 
 	i = 0;
 	j = 0;
+	printf("input ft_strdup_value(char *s1):|%s|\n", s1);
 	if (!(s1))
 		return (NULL);
 	while (s1[i] != '\0')
 		i++;
-	while (s1[j] != '=' || s1[i] != '\0')
+	while (s1[j] != '=' && s1[i] != '\0')
 		j++;
 	j = j + 1;
 	if (!(dst = malloc(sizeof(char) * ((i - j) + 1))))
