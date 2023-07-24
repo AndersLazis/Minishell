@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 23:18:34 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/23 19:09:15 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/24 12:16:19 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ void	minishell_loop(t_data *data)
 		data->heredoc_flag = 0;
 		data->dollar_questionmark_flag = 0;
 		command_line = readline("♖♘♗♕♔♗♘♖>> ");
-		if (dollar_questionmark_exist(command_line, data))//<-changed_23.07.23
-			command_line = handle_dollar_questionmark(command_line, data);//<-changed_23.07.23
 		if (heredoc_exist(command_line, data))
 			command_line = handle_heredoc(command_line, data);
 		add_history(command_line);

@@ -6,11 +6,19 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:36:09 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/23 19:25:27 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/24 12:17:27 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
+
+int convert_exit_code(t_data *data)	//<-Changed_23.07.24
+{	
+	if(WIFEXITED(data->exit_code))
+		return(WEXITSTATUS(data->exit_code));
+	else
+		exit (EXIT_FAILURE);
+}
 
 void	dollarsignexpansion(char *str, t_data *data)
 {
@@ -43,19 +51,21 @@ void	dollarsignexpansion(char *str, t_data *data)
 			data->j += 1;
 			m++;
 		}
-	}/*
+	}
 	else if (word[0] == '?' && word[1] == 0)
 	{
 		m = 0;
-		char *str = ft_itoa(exit_code);
-		while (str[m] != 0) // ft_itoa(exit_code);
+		
+		int exit_status = convert_exit_code(data);	//<-Changed_23.07.24
+		char *str = ft_itoa(exit_status);	//<-Changed_23.07.24
+		while (str[m] != 0)
 		{
 			data->lexer_output[data->k][data->j] = str[m];
 			data->j += 1;
 			m++;
 		}
 	}
-	*/
+	
 	if (current == NULL && data->j == 0)
 		data->helper_dollar = -1;
 	free(word);

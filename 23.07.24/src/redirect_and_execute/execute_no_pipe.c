@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 22:25:57 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/23 19:08:25 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/24 11:01:34 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	execute_no_pipe(t_data *data)
 			ft_export(data);
 		else if (ft_strcmp(data->split[0], "unset") == 0)
 			ft_unset(data);
-		else if (ft_strcmp(data->split[0], "$?") == 0)
-			ft_dollar_question_mark(data);
+		// else if (ft_strcmp(data->split[0], "$?") == 0)
+		// 	ft_dollar_question_mark(data);
 		else
 		{
 			pid = fork();

@@ -1,0 +1,299 @@
+== Invalid read of size 4
+==15062==    at 0x100004404: ft_exit (in ./minishell)
+==15062==    by 0x100005D44: execute_build_in (in ./minishell)
+==15062==    by 0x100005B04: execute (in ./minishell)
+==15062==    by 0x100005ACD: execute_no_pipe (in ./minishell)
+==15062==    by 0x1000012E3: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062==  Address 0x1008b05d8 is 120 bytes inside a block of size 168 free'd
+==15062==    at 0x10012791D: free (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x1000043BE: ft_exit (in ./minishell)
+==15062==    by 0x100005D44: execute_build_in (in ./minishell)
+==15062==    by 0x100005B04: execute (in ./minishell)
+==15062==    by 0x100005ACD: execute_no_pipe (in ./minishell)
+==15062==    by 0x1000012E3: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062==  Block was alloc'd at
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x100001343: main (in ./minishell)
+==15062== 
+==15062== Invalid read of size 8
+==15062==    at 0x10000440E: ft_exit (in ./minishell)
+==15062==    by 0x100005D44: execute_build_in (in ./minishell)
+==15062==    by 0x100005B04: execute (in ./minishell)
+==15062==    by 0x100005ACD: execute_no_pipe (in ./minishell)
+==15062==    by 0x1000012E3: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062==  Address 0x1008b0588 is 40 bytes inside a block of size 168 free'd
+==15062==    at 0x10012791D: free (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x1000043BE: ft_exit (in ./minishell)
+==15062==    by 0x100005D44: execute_build_in (in ./minishell)
+==15062==    by 0x100005B04: execute (in ./minishell)
+==15062==    by 0x100005ACD: execute_no_pipe (in ./minishell)
+==15062==    by 0x1000012E3: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062==  Block was alloc'd at
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x100001343: main (in ./minishell)
+==15062== 
+Terminating the shell
+==15062== 
+==15062== HEAP SUMMARY:
+==15062==     in use at exit: 323,916 bytes in 400 blocks
+==15062==   total heap usage: 1,045 allocs, 645 frees, 405,619 bytes allocated
+==15062== 
+==15062== 2 bytes in 1 blocks are definitely lost in loss record 1 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x100463CE5: strdup (in /usr/lib/system/libsystem_c.dylib)
+==15062==    by 0x1000017CB: insert_at_end (in ./minishell)
+==15062==    by 0x100002095: init_env_unsorted (in ./minishell)
+==15062==    by 0x1000013BD: main (in ./minishell)
+==15062== 
+==15062== 2 bytes in 1 blocks are definitely lost in loss record 2 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x100463CE5: strdup (in /usr/lib/system/libsystem_c.dylib)
+==15062==    by 0x1000017CB: insert_at_end (in ./minishell)
+==15062==    by 0x100001F65: init_env_sorted (in ./minishell)
+==15062==    by 0x1000013CA: main (in ./minishell)
+==15062== 
+==15062== 8 bytes in 1 blocks are definitely lost in loss record 5 of 110
+==15062==    at 0x100127EE6: realloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC8E: xrealloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100149152: expand_prompt (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10014962D: rl_expand_prompt (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B49: rl_set_prompt (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B6C: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 9 bytes in 1 blocks are definitely lost in loss record 7 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001514B1: _rl_reset_region_color (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100151325: _rl_init_terminal_io (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137C9E: rl_initialize (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B71: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 11 bytes in 1 blocks are definitely lost in loss record 8 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100151467: _rl_reset_region_color (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100151336: _rl_init_terminal_io (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137C9E: rl_initialize (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B71: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 12 bytes in 1 blocks are definitely lost in loss record 10 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100153E0E: _rl_init_locale (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100153EDD: _rl_reset_locale (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137BFE: rl_initialize (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B71: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 16 bytes in 1 blocks are definitely lost in loss record 16 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x100137DCB: rl_initialize (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B71: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 18 bytes in 3 blocks are definitely lost in loss record 17 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x100463CE5: strdup (in /usr/lib/system/libsystem_c.dylib)
+==15062==    by 0x1000040A2: split_into_commands (in ./minishell)
+==15062==    by 0x1000012CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 28 bytes in 1 blocks are definitely lost in loss record 22 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B13: rl_set_prompt (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B6C: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 28 bytes in 1 blocks are definitely lost in loss record 23 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001490F8: expand_prompt (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10014962D: rl_expand_prompt (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B49: rl_set_prompt (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B6C: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 256 bytes in 1 blocks are definitely lost in loss record 50 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137C70: rl_initialize (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B71: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 1,024 bytes in 1 blocks are definitely lost in loss record 59 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC98: xrealloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10014CE96: realloc_line (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001496A6: init_line_structures (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001473A6: rl_redisplay (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137F6D: readline_internal_setup (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B92: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 1,024 bytes in 1 blocks are definitely lost in loss record 60 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC98: xrealloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10014CEAC: realloc_line (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001496A6: init_line_structures (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001473A6: rl_redisplay (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137F6D: readline_internal_setup (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B92: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 1,024 bytes in 1 blocks are definitely lost in loss record 61 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC98: xrealloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10014CEC9: realloc_line (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001496A6: init_line_structures (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001473A6: rl_redisplay (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137F6D: readline_internal_setup (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B92: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 1,024 bytes in 1 blocks are definitely lost in loss record 62 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC98: xrealloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10014CEDF: realloc_line (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001496A6: init_line_structures (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001473A6: rl_redisplay (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137F6D: readline_internal_setup (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B92: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 1,024 bytes in 1 blocks are definitely lost in loss record 63 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001496D9: init_line_structures (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001473A6: rl_redisplay (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137F6D: readline_internal_setup (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B92: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 1,024 bytes in 1 blocks are definitely lost in loss record 64 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001496FB: init_line_structures (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001473A6: rl_redisplay (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137F6D: readline_internal_setup (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B92: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 1,024 bytes in 1 blocks are definitely lost in loss record 65 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100149713: init_line_structures (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001473A6: rl_redisplay (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137F6D: readline_internal_setup (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B92: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 1,024 bytes in 1 blocks are definitely lost in loss record 66 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100149732: init_line_structures (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001473A6: rl_redisplay (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137F6D: readline_internal_setup (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B92: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 2,032 bytes in 1 blocks are possibly lost in loss record 71 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100150F77: _rl_init_terminal_io (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137C9E: rl_initialize (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B71: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 3,808 (1,536 direct, 2,272 indirect) bytes in 1 blocks are definitely lost in loss record 77 of 110
+==15062==    at 0x100127EE6: realloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC8E: xrealloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10013CDE5: rl_add_funmap_entry (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10013CE67: rl_initialize_funmap (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137CB8: rl_initialize (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B71: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 4,112 bytes in 1 blocks are definitely lost in loss record 95 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10013CF36: rl_make_bare_keymap (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100142A49: rl_generic_bind (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001427E6: rl_bind_keyseq_if_unbound_in_map (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100151524: bind_termcap_arrow_keys (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001512E7: _rl_init_terminal_io (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137C9E: rl_initialize (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B71: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 4,183 (4,016 direct, 167 indirect) bytes in 1 blocks are definitely lost in loss record 96 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100154EEE: add_history (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10000120E: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 53,456 (4,112 direct, 49,344 indirect) bytes in 1 blocks are definitely lost in loss record 107 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10013CF36: rl_make_bare_keymap (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100142A49: rl_generic_bind (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001427E6: rl_bind_keyseq_if_unbound_in_map (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100151596: bind_termcap_arrow_keys (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001512E7: _rl_init_terminal_io (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137C9E: rl_initialize (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B71: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 53,456 (4,112 direct, 49,344 indirect) bytes in 1 blocks are definitely lost in loss record 108 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10013CF36: rl_make_bare_keymap (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100142A49: rl_generic_bind (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001427E6: rl_bind_keyseq_if_unbound_in_map (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100151524: bind_termcap_arrow_keys (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001512F3: _rl_init_terminal_io (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137C9E: rl_initialize (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B71: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)
+==15062== 
+==15062== 61,680 (4,112 direct, 57,568 indirect) bytes in 1 blocks are definitely lost in loss record 109 of 110
+==15062==    at 0x100127545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==15062==    by 0x10015AC44: xmalloc (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x10013CF36: rl_make_bare_keymap (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100142A49: rl_generic_bind (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001427E6: rl_bind_keyseq_if_unbound_in_map (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100151524: bind_termcap_arrow_keys (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1001512FF: _rl_init_terminal_io (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137C9E: rl_initialize (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x100137B71: readline (in /goinfre/aputiev/.brew/Cellar/readline/8.2.1/lib/libreadline.8.2.dylib)
+==15062==    by 0x1000011CC: minishell_loop (in ./minishell)
+==15062==    by 0x1000013F4: main (in ./minishell)

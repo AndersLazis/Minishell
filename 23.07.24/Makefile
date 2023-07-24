@@ -15,7 +15,7 @@ SRCS		=	minishell.c signal_handling.c \
 				syntax_checker.c find_path.c ft_split_arguments.c split_into_commands.c \
 				built_in/ft_exit.c built_in/ft_env.c \
 				built_in/ft_cd.c built_in/ft_pwd.c built_in/ft_echo.c \
-				built_in/ft_export.c built_in/utils_export.c built_in/ft_unset.c built_in/ft_dollar_question_mark.c \
+				built_in/ft_export.c built_in/utils_export.c built_in/ft_unset.c \
 				redirect_and_execute/redirect_in.c redirect_and_execute/redirect_out.c \
 				redirect_and_execute/execute_no_pipe.c redirect_and_execute/execute_with_pipes.c \
 				redirect_and_execute/heredoc.c \
