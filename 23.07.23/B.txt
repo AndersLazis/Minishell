@@ -1,2 +1,4 @@
-data->split[j]abc
-abc
+a
+b
+c
+d
