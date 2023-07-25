@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:56:48 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/22 13:04:09 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/25 01:31:36 by mschulme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,47 +79,8 @@ void	insert_at_end(t_env_list *head, char *name, char *value)
 	t_env_list	*current;
 
 	node = malloc(sizeof(t_env_list));
-	node->name = strdup(name);
-	node->value = strdup(value);
-	node->next = NULL;
-	current = head;
-	while (current->next != NULL)
-		current = current->next;
-	current->next = node;
-}
-
-void	create_old_pwd(t_env_list *head, char* old_pwd)
-{
-	t_env_list	*node;
-	t_env_list	*current;
-	char	*oldpwd = "OLDPWD";
-	node = malloc(sizeof(t_env_list));
-	node->name = malloc(sizeof(char) * 7);
-	strcpy(node->name, oldpwd);
-	node->name[6] = '\0';
-	if(old_pwd == NULL)
-		node->value = NULL;
-	else
-		node->value = old_pwd;
-	node->next = NULL;
-	current = head;
-	while (current->next != NULL)
-		current = current->next;
-	current->next = node;
-}
-
-void	create_shlvl(t_env_list *head)
-{
-	t_env_list	*node;
-	t_env_list	*current;
-	char	*shlvl = "SHLVL";
-	char	*shlvl_val = "1";
-	
-	node = malloc(sizeof(t_env_list));
-	node->name = malloc(sizeof(char) * 6);
-	strcpy(node->name, shlvl);
-	node->name[5] = '\0';
-	node->value = shlvl_val;
+	node->name = ft_strdup(name);
+	node->value = ft_strdup(value);
 	node->next = NULL;
 	current = head;
 	while (current->next != NULL)
