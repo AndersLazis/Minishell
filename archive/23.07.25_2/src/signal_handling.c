@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signal_handling.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 15:42:54 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/25 20:40:46 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/07/25 21:23:10 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	tty_get_flag(unsigned int index)
 	return ((g_flags & (1 << index)) != 0);
 }
 
-void	tty_set_flag(unsigned int index, int enable)
+void	tty_set_flag(unsigned int index, int enable)	//tty_set_flag(TTY_OMIT_LF, 0);
 {
 	if (enable)
 		g_flags |= 1 << index;
