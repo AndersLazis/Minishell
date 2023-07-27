@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cd.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:28:35 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/25 00:13:05 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/07/27 22:23:50 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,42 @@ int	oldpwd_update(char *old_pwd_sorted, char *old_pwd_unsorted, t_data *data)
 	return (EXIT_FAILURE);
 }
 
-int	ft_cd(t_data *data)
+int	currentpwd_update(t_data *data)	//<- changed_23.07.27_2
+{
+	t_env_list	*pwd_list_sorted;
+	t_env_list	*pwd_list_unsorted;
+
+	if ((searchlist(data->env_sorted, "PWD") != NULL))
+	{
+		pwd_list_sorted = searchlist(data->env_sorted, "PWD");
+		pwd_list_unsorted = searchlist(data->env_unsorted, "PWD");
+		if (pwd_list_sorted->value)
+		{
+			free(pwd_list_sorted->value);
+			pwd_list_sorted->value = NULL;
+		}
+		if (pwd_list_unsorted->value)
+		{
+			free(pwd_list_unsorted->value);
+			pwd_list_unsorted->value = NULL;
+		}
+		pwd_list_sorted->value = getcwd(NULL, sizeof(NULL));
+		pwd_list_unsorted->value = getcwd(NULL, sizeof(NULL));
+		update_envp(data);
+		return (EXIT_SUCCESS);
+	}	
+	return (EXIT_FAILURE);
+}
+
+
+int	ft_cd(t_data *data)	//<- changed_23.07.27_2
 {
 	int		exit_status;
 	char	*old_pwd_sorted;
 	char	*old_pwd_unsorted;
 
 	exit_status = 0;
-	printf("ft_cd: data->split[1]:|%s|\n", data->split[1]);
+
 	if (data->split[1] == NULL)
 		exit_status = go_home_directory(data);
 	else if (!ft_strncmp(data->split[1], "-", 1))
@@ -99,7 +127,10 @@ int	ft_cd(t_data *data)
 		if (exit_status != 0)
 			printf("No such file or directory\n");
 		else
+		{
 			oldpwd_update(old_pwd_sorted, old_pwd_unsorted, data);
+			currentpwd_update(data);
+		}
 	}
 	if (exit_status != 0)
 		return (EXIT_FAILURE);

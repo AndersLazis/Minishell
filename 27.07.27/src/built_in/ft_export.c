@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:36:39 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/26 18:08:34 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/27 23:33:29 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,23 @@ int	update_envp(t_data *data)
 	return (0);
 }
 
+int check_last_equal_sign(char *str)	//<-changed_23.07.27_2
+{
+	int	i;
+
+	i = 0;
+	
+	while (str[i] != '\0' && str[i] != '=')
+	{
+		if(str[i] == '=' && str[i + 1] == '\0')
+		{	printf("HEY I RETURN 1\n");
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
 void	ft_export(t_data *data)	//<-changed_23.07.26
 {
 	t_env_list	*current;
@@ -116,9 +133,10 @@ void	ft_export(t_data *data)	//<-changed_23.07.26
 		while (data->split[i] != NULL)
 		{
 			printf("data->split[%d]|%s|\n", i, data->split[i]);
-			name = ft_strdup_name(data->split[i]);			
-			val = ft_strdup_value(data->split[i]);					
-			if (searchlist(data->env_sorted, name) != NULL)	
+			name = ft_strdup_name(data->split[i]);
+			val = ft_strdup_value(data->split[i]);
+			printf("val|%s|\n", val);
+			if (searchlist(data->env_sorted, name) != NULL)
 			{
 				if(ft_strcmp(val, ""))
 				{
@@ -134,8 +152,8 @@ void	ft_export(t_data *data)	//<-changed_23.07.26
 			else
 			{
 				insert_at_end(data->env_sorted, name, val);
-				data->env_sorted = sort_list(data->env_sorted);
-				if(ft_strcmp(val, ""))
+				data->env_sorted = sort_list(data->env_sorted);				
+				if(ft_strcmp(val, "") || (check_last_equal_sign(val) == 1))
 					insert_at_end(data->env_unsorted, name, val);
 			}
 			i++;
