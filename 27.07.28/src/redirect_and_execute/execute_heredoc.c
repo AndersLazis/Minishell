@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 23:54:16 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/28 19:29:14 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/28 19:58:15 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,27 +107,27 @@ int		check_dollar_sign(char *line)	//<-changed_23.07.27
 	return (0);
 }
 
-void signal_heredoc(int signal)
-{	
-	// (void)signal;
-	// g_flags = signal;
+// void signal_heredoc(int signal)
+// {	
+// 	// (void)signal;
+// 	// g_flags = signal;
 	
-	if (signal == SIGINT)
-		kill(0, SIGINT);
-}
+// 	if (signal == SIGINT)
+// 		kill(0, SIGINT);
+// }
 
 void	execute_heredoc(t_data *data)	//<-changed_23.07.27
 {
 	char	*delimiter;
 	char	*line;
 	
-	int pid;
-	pid = fork();
+	//int pid;
+	//pid = fork();
 	data->m = 0;
 
-	if (pid == 0)
-	{	
-		signal(SIGINT, signal_heredoc);
+	// if (pid == 0)
+	// {	
+		//signal(SIGINT, signal_heredoc);
 		while (next_heredoc(data) == true)
 		{	
 			delimiter = data->command_array[data->index][data->m];
@@ -151,8 +151,8 @@ void	execute_heredoc(t_data *data)	//<-changed_23.07.27
 			//free(line);
 			close(data->input);
 			data->m += 1;
-		}
-	exit (0);
+	// 	}
+	// exit (0);
 	}
 	//wait (NULL);
 	data->m += 1;
