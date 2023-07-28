@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 15:42:54 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/28 19:05:42 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/28 20:44:54 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	setup_signal_handling(void)
 	action.sa_flags = SA_RESTART;
 	sigaction(SIGQUIT, &action, NULL);
 	sigaction(SIGINT, &action, NULL);
-
 }
 
 /*
