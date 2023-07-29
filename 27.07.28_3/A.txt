@@ -1,0 +1,13 @@
+A.txt
+B.txt
+Makefile
+a.out
+includes
+libs
+minishell
+minishell.dSYM
+philo
+src
+test.c
+tmp
+utils
