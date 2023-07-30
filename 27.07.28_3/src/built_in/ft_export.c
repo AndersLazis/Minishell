@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:36:39 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/29 18:10:15 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/30 14:57:00 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int	update_envp(t_data *data)
 	return (0);
 }
 
-void	ft_export(t_data *data)	//<-changed_23.07.28
+void	ft_export(t_data *data)	//<-changed_23.07.30
 {
 	t_env_list	*current;
 	char		*name;
@@ -114,7 +114,7 @@ void	ft_export(t_data *data)	//<-changed_23.07.28
 		print_sorted_list(data->env_sorted);
 	else
 	{
-		if (!is_env_var_name_valid(data->split, data, 1))	//<-changed_23.07.29
+		if (!is_env_var_name_valid(data->split, data, 1))
 			return ;
 		while (data->split[i] != NULL)
 		{
@@ -145,6 +145,8 @@ void	ft_export(t_data *data)	//<-changed_23.07.28
 				if(ft_strcmp(val, "") || (check_equal_sign(data->split[i]) == 1))
 					insert_at_end(data->env_unsorted, name, val, equal_sign);
 			}
+			free(name);
+			free(val);
 			i++;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:56:48 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/29 17:40:31 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/30 14:44:21 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	insert_at_end(t_env_list *head, char *name, char *value, int equal_sign)	//
 	t_env_list	*current;
 
 	node = malloc(sizeof(t_env_list));
-	node->name = ft_strdup(name);
+	node->name = ft_strdup(name);	
 	node->value = ft_strdup(value);
 	node->equal_sign = equal_sign;	//<-changed_23.07.28
 	node->next = NULL;

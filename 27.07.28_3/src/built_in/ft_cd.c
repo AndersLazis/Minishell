@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:28:35 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/29 17:17:07 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/30 14:46:01 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	oldpwd_update(char *old_pwd_sorted, char *old_pwd_unsorted, t_data *data)	//
 {
 	t_env_list	*pwd_list_sorted;
 	t_env_list	*pwd_list_unsorted;
+	char *name;
 	
 	if ((searchlist(data->env_sorted, "OLDPWD") != NULL))
 	{
@@ -67,12 +68,14 @@ int	oldpwd_update(char *old_pwd_sorted, char *old_pwd_unsorted, t_data *data)	//
 				free(pwd_list_unsorted->value);
 				pwd_list_unsorted->value = NULL;
 			}
-		}
+		} 
 		else if (pwd_list_unsorted == NULL)
 		{	
-			char *name = strdup("OLDPWD");
+			name = strdup("OLDPWD");
 			insert_at_end(data->env_unsorted, name, "", 1);
 			pwd_list_unsorted = searchlist(data->env_unsorted, "OLDPWD");
+			free(name);
+			free(pwd_list_unsorted->value);
 		}
 		pwd_list_sorted->value = ft_strdup(old_pwd_sorted);		
 		pwd_list_unsorted->value = ft_strdup(old_pwd_unsorted);
