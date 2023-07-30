@@ -1,0 +1,8 @@
+  PID TTY           TIME CMD
+30681 ttys001    0:00.02 /bin/bash --init-file /Applications/Visual Studio Code-1.74.0.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+30858 ttys001    0:00.04 ./minishell
+11231 ttys002    0:00.01 /bin/bash --init-file /Applications/Visual Studio Code-1.74.0.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+11261 ttys003    0:00.01 /bin/bash --init-file /Applications/Visual Studio Code-1.74.0.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+69814 ttys008    0:00.05 /bin/bash --init-file /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+74095 ttys008    0:00.32 ./minishell
+74180 ttys012    0:00.01 /bin/bash --init-file /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
