@@ -1,0 +1,3 @@
+abc
+data->split[0]:echo
+data->split[1]:abc

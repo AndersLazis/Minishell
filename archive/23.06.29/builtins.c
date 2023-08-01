@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 13:27:48 by aputiev           #+#    #+#             */
-/*   Updated: 2023/06/30 20:30:49 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/28 14:40:41 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,11 +146,6 @@ int	ft_env(char **envp)
 	return (0);
 }
 
-
-//////////////////// EXPORT ////////////////////
-
-
-
 int	ft_strcmp(char *s1, char *s2)
 {
 	size_t	i;
@@ -164,9 +159,6 @@ int	ft_strcmp(char *s1, char *s2)
 	}
 	return (0);
 }
-
-
-
 
 t_env	*sort_list(t_env *lst, int	(*ft_strcmp)(char *s1, char *s2))
 {

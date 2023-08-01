@@ -1,0 +1,21 @@
+echo "aspas ->'"
+echo "> >> < * ? [ ] | ; [ ] || && ( ) & # $ \ <<"
+echo $?HELLO
+export HELLO="123 A-"
+unset HELLO1 HELLO2
+exit 9223372036854775807
+exit -9223372036854775809
+"aaa"
+cat << eof
+
+
+
+==67269== 1,016 (16 direct, 1,000 indirect) bytes in 1 blocks are definitely lost in loss record 63 of 110
+==67269==    at 0x10012F545: malloc (in /usr/local/Cellar/valgrind/HEAD-6ff08b6/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==67269==    by 0x100005916: split_args (split_args.c:72)
+==67269==    by 0x100009D77: heredoc_pipes (execute_heredoc_pipes.c:64)
+==67269==    by 0x100008E87: heredoc_and_pipes (execute_with_pipes.c:28)
+==67269==    by 0x1000088E4: execute_with_pipes (execute_with_pipes.c:78)
+==67269==    by 0x1000027FE: minishell_loop (minishell.c:44)
+==67269==    by 0x1000028F7: main (minishell.c:68)
+==67269== 

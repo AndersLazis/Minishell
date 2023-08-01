@@ -1,0 +1,25 @@
+<
+>
+A.txt
+A.txt A.txt
+B.txt
+C.txt
+Makefile
+a.out
+cmd_arr[data-
+filename
+includes
+index][data-
+invalid_permission
+libs
+ls
+m]
+minishell
+minishell.dSYM
+minishell_tester
+src
+test
+test.c
+test_files
+tmp
+utils

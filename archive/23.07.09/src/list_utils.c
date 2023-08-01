@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:56:48 by mschulme          #+#    #+#             */
-/*   Updated: 2023/07/20 12:42:37 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/07/28 16:18:50 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ t_env_list	*sort_list(t_env_list *lst)
 	return (lst);
 }
 
-void	insert_at_end(t_env_list *head, char *name, char *value)
+void	insert_at_end(t_env_list *head, char *name, char *value,)
 {
 	t_env_list	*node;
 	t_env_list	*current;
