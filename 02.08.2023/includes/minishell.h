@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 00:00:58 by mschulme          #+#    #+#             */
-/*   Updated: 2023/08/01 23:43:11 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/08/02 11:58:52 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,9 @@ typedef struct s_data
 	char		**new_envp;
 	char		**split;
 	char		*command;
+	char		*command_line;
+	char		**temp;
+	char		**args;
 	char		**av;
 	int			*heredoc_exists;
 	int			m;
@@ -97,8 +100,8 @@ typedef struct s_data
 /* list_utils.c */
 
 t_env_list	*sort_list(t_env_list *lst);
-void		insert_at_end(t_env_list *head, char *name
-				, char *value, int equal_sign);
+void		insert_at_end(t_env_list *head, char *name,
+				char *value, int equal_sign);
 void		create_old_pwd(t_env_list *head, char *old_pwd);
 void		create_shlvl(t_env_list *head);
 t_env_list	*swap_list_operation(t_env_list *lst, t_env_list *tmp);

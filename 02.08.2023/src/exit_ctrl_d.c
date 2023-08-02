@@ -6,7 +6,7 @@
 /*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 23:17:35 by mschulme          #+#    #+#             */
-/*   Updated: 2023/08/01 23:22:28 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/08/02 00:11:16 by mschulme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	exit_ctrl_d(t_data *data)
 {
-	int i;
-	
+	int	i;
+
 	if (free_unsorted_list(data) != 1)
 		exit(EXIT_FAILURE);
 	if (free_sorted_list(data) != 1)

@@ -6,32 +6,11 @@
 /*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 22:12:26 by mschulme          #+#    #+#             */
-/*   Updated: 2023/08/01 01:02:37 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/08/02 00:18:39 by mschulme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
-
-int	character(char ch)
-{
-	if (ch <= 32 || ch > 126)
-		return (0);
-	if (ch == '>' || ch == '<')
-		return (0);
-	if (ch == '$' || ch == '|')
-		return (0);
-	if (ch == '\'' || ch == '\"')
-		return (0);
-	return (1);
-}
-
-int	space(char ch)
-{
-	if ((ch >= 9 && ch <= 13) || ch == ' ')
-		return (1);
-	else
-		return (0);
-}
 
 static int	check_for_non_ascii(char *str, t_data *data)
 {
@@ -65,6 +44,28 @@ static void	init_lexer(t_data *data)
 	data->k = 0;
 }
 
+static void	lexer_loop(char *str, t_data *data)
+{
+	if (data->lexer_output[data->k] == NULL)
+		data->lexer_output[data->k] = ft_calloc(2500, 1);
+	if (space(str[data->i]) == 1)
+		fsm_space(str, data);
+	else if (character(str[data->i]) == 1)
+		fsm_character(str, data);
+	else if (str[data->i] == '$')
+		fsm_dollar(str, data);
+	else if (str[data->i] == '|')
+		fsm_pipe(str, data);
+	else if (str[data->i] == '>')
+		fsm_greater(str, data);
+	else if (str[data->i] == '<')
+		fsm_smaller(str, data);
+	else if (str[data->i] == '\"')
+		fsm_double_quotes(str, data);
+	else if (str[data->i] == '\'')
+		fsm_single_quotes(str, data);
+}
+
 void	lexer(char *str, t_data *data)
 {
 	init_lexer(data);
@@ -72,24 +73,7 @@ void	lexer(char *str, t_data *data)
 		return ;
 	while (str[data->i] != 0)
 	{
-		if (data->lexer_output[data->k] == NULL)
-			data->lexer_output[data->k] = ft_calloc(2500, 1);
-		if (space(str[data->i]) == 1)
-			fsm_space(str, data);
-		else if (character(str[data->i]) == 1)
-			fsm_character(str, data);
-		else if (str[data->i] == '$')
-			fsm_dollar(str, data);
-		else if (str[data->i] == '|')
-			fsm_pipe(str, data);
-		else if (str[data->i] == '>')
-			fsm_greater(str, data);
-		else if (str[data->i] == '<')
-			fsm_smaller(str, data);
-		else if (str[data->i] == '\"')
-			fsm_double_quotes(str, data);
-		else if (str[data->i] == '\'')
-			fsm_single_quotes(str, data);
+		lexer_loop(str, data);
 	}
 	if (data->k == 0)
 		data->lexer_output[1] = NULL;

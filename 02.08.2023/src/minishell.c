@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 23:18:34 by mschulme          #+#    #+#             */
-/*   Updated: 2023/08/01 23:18:52 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/08/02 14:25:08 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,29 @@
 
 void	minishell_loop(t_data *data)
 {
-	char	*command_line;
-
-	while (1)
+	signal(SIGINT, signal_handler);
+	signal(SIGQUIT, signal_handler_quit);
+	data->command_line = readline("♖♘♗♕♔♗♘♖>> ");
+	add_history(data->command_line);
+	signal(SIGINT, signal_int_nothing);
+	g_flags = 0;
+	if (data->command_line != NULL)
 	{
-		signal(SIGINT, signal_handler);
-		signal(SIGQUIT, signal_handler_quit);
-		command_line = readline("♖♘♗♕♔♗♘♖>> ");
-		add_history(command_line);
-		signal(SIGINT, signal_int_nothing);
-		g_flags = 0;
-		if (command_line != NULL)
-		{
-			lexer(command_line, data);
-			if (data->error != -1)
-				syntax_checker(data);
-		}
-		else
-			exit_ctrl_d(data);
+		lexer(data->command_line, data);
 		if (data->error != -1)
-		{
-			split_into_commands(data);
-			if (data->pipe_count == 0)
-				execute_no_pipe(data);
-			else
-				execute_with_pipes(data);
-		}
-		reset_function(command_line, data);
+			syntax_checker(data);
 	}
+	else
+		exit_ctrl_d(data);
+	if (data->error != -1)
+	{
+		split_into_commands(data);
+		if (data->pipe_count == 0)
+			execute_no_pipe(data);
+		else
+			execute_with_pipes(data);
+	}
+	reset_function(data->command_line, data);
 }
 
 int	main(int ac, char **av, char **env)
@@ -62,6 +57,7 @@ int	main(int ac, char **av, char **env)
 	increment_shell_level(data);
 	data->envp = NULL;
 	update_envp(data);
-	minishell_loop(data);
+	while (1)
+		minishell_loop(data);
 	return (EXIT_SUCCESS);
 }

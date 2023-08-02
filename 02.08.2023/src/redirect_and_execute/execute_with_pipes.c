@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute_with_pipes.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 22:25:57 by mschulme          #+#    #+#             */
-/*   Updated: 2023/08/01 23:51:52 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/08/02 19:04:07 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ static void	heredoc_and_pipes(t_data *data)
 
 static void	arguments_command(t_data *data)
 {
-	char **temp;
-	char	**args;
 	int		i;
 	int		j;
 
@@ -50,18 +48,18 @@ static void	arguments_command(t_data *data)
 		if (data->cmd_arr[data->index][i][0] == '>' ||
 			data->cmd_arr[data->index][i][0] == '<')
 		{
-			args = split_args(data->cmd_arr[data->index][i + 1], data);
-			free(args[0]);
+			data->args = split_args(data->cmd_arr[data->index][i + 1], data);
+			free(data->args[0]);
 			j = 1;
-			while (args[j] != NULL)
+			while (data->args[j] != NULL)
 			{
-				temp = add_string(data->split, args[j]);
+				data->temp = add_string(data->split, data->args[j]);
 				free(data->split);
-				data->split = temp;
-				free(args[j]);
+				data->split = data->temp;
+				free(data->args[j]);
 				j++;
 			}
-			free(args);
+			free(data->args);
 		}
 		i++;
 	}
@@ -69,7 +67,6 @@ static void	arguments_command(t_data *data)
 
 static void	preprocessing(t_data *data, int i)
 {
-
 	data->cmd = true;
 	if (data->cmd_arr[i][0][0] == '>' || data->cmd_arr[i][0][0] == '<')
 	{
@@ -148,7 +145,7 @@ static void	execute_cmd(t_data *data)
 	}
 	else
 		execve(path, data->split, data->envp);
-		exit (127);
+	exit (127);
 }
 
 void	execute_with_pipes(t_data *data)

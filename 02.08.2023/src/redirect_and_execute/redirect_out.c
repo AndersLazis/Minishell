@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirect_out.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschulme <mschulme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:35:10 by mschulme          #+#    #+#             */
-/*   Updated: 2023/08/01 21:33:37 by mschulme         ###   ########.fr       */
+/*   Updated: 2023/08/02 19:32:44 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,8 @@ bool	redirect_out(t_data *data)
 			redirect_output_to(data, APPEND);
 		else if (ft_strcmp(data->cmd_arr[data->index][data->m - 1], ">") == 0)
 			redirect_output_to(data, TRUNCATE);
-		else if (ft_strcmp(data->cmd_arr[data->index][data->m - 1], "<") == 0 && data->heredoc_flag == 0)
+		else if (ft_strcmp(data->cmd_arr[data->index][data->m - 1], "<") ==
+				0 && data->heredoc_flag == 0)
 			redirect_in_from(data->filename, data);
 		if (data->exit_code == true)
 			break ;
