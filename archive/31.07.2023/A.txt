@@ -1,9 +1,0 @@
-       0 A.txt
-       0 B.txt
-       0 B.txt
-       0 total
-data->split[0]:wc
-data->split[1]:-l
-data->split[2]:A.txt
-data->split[3]:B.txt
-data->split[4]:B.txt

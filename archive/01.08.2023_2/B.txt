@@ -1,6 +1,0 @@
-       0 A.txt
-       0 A.txt
-      25 C.txt
-      25 C.txt
-      25 C.txt
-      75 total
