@@ -1,6 +1,6 @@
 # Minishell
 
-<p align="left">
+<p align="center">
   <img src="https://github.com/AndersLazis/AndersLazis/blob/main/assets/badges/minishelle.png" alt="Minishell 42 project badge"/>
 </p>
 
